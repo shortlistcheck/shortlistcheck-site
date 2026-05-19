@@ -8,18 +8,18 @@
     <style>
       :root {
         color-scheme: light;
-        --ink: #15191f;
-        --muted: #5a6472;
-        --line: #d7dde5;
-        --paper: #f7f8f6;
-        --panel: #fffefa;
-        --accent: #176b5d;
-        --accent-dark: #0d423a;
-        --amber: #a96114;
-        --red: #9b2c2c;
-        --green-soft: #e2f0ec;
-        --amber-soft: #f6ead9;
-        --red-soft: #f8e5e5;
+        --ink: #08110f;
+        --muted: #53605c;
+        --line: #d8d4c8;
+        --paper: #faf7ee;
+        --paper-2: #f3efe5;
+        --panel: #fffdf7;
+        --green: #003f20;
+        --green-2: #0c5a35;
+        --amber: #d86f00;
+        --amber-soft: #fff2dc;
+        --green-soft: #e7f1ea;
+        --shadow: rgba(8, 17, 15, 0.1);
       }
 
       * {
@@ -32,9 +32,9 @@
 
       body {
         margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         color: var(--ink);
-        background: var(--paper);
+        background: radial-gradient(circle at 50% -10%, #fffdf7 0, var(--paper) 44%, #f6f1e7 100%);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         line-height: 1.5;
       }
 
@@ -43,205 +43,246 @@
       }
 
       .wrap {
-        width: min(1140px, calc(100% - 32px));
+        width: min(1180px, calc(100% - 36px));
         margin: 0 auto;
       }
 
       header {
-        border-bottom: 1px solid var(--line);
-        background: rgba(247, 248, 246, 0.96);
+        border-bottom: 1px solid rgba(216, 212, 200, 0.75);
       }
 
       nav {
-        min-height: 64px;
+        min-height: 76px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 24px;
+        gap: 22px;
       }
 
       .brand {
         display: flex;
         align-items: center;
-        gap: 11px;
-        font-weight: 780;
+        gap: 12px;
+        font-weight: 800;
+        font-size: 21px;
       }
 
-      .mark {
-        width: 34px;
-        height: 34px;
-        border: 1px solid var(--ink);
-        border-radius: 6px;
-        display: grid;
-        place-items: center;
-        background: var(--panel);
-        color: var(--accent-dark);
-        font-weight: 850;
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        color: var(--green);
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 24px;
-        color: var(--muted);
+        gap: 32px;
+        color: #1b2421;
         font-size: 14px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
       }
 
       .button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 42px;
-        padding: 0 16px;
-        border-radius: 6px;
-        border: 1px solid var(--accent-dark);
-        background: var(--accent-dark);
-        color: white;
-        text-decoration: none;
-        font-weight: 730;
+        gap: 10px;
+        min-height: 46px;
+        padding: 0 20px;
+        border-radius: 5px;
+        border: 1px solid var(--green);
+        background: var(--green);
+        color: #fffdf7;
+        font-weight: 760;
         font-size: 14px;
+        text-decoration: none;
         white-space: nowrap;
+        box-shadow: 0 10px 26px rgba(0, 63, 32, 0.18);
       }
 
       .button.secondary {
         background: transparent;
-        color: var(--accent-dark);
+        color: var(--ink);
+        box-shadow: none;
+        border-color: #1f2925;
       }
 
       .hero {
-        padding: 76px 0 46px;
+        padding: 64px 0 34px;
         border-bottom: 1px solid var(--line);
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.98fr) minmax(390px, 1.02fr);
-        gap: 48px;
-        align-items: start;
+        grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
+        gap: 56px;
+        align-items: center;
       }
 
       .eyebrow {
-        margin: 0 0 14px;
-        color: var(--accent-dark);
-        font-size: 13px;
-        font-weight: 780;
+        margin: 0 0 18px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 840;
+        letter-spacing: 0;
         text-transform: uppercase;
       }
 
       h1 {
         margin: 0;
-        max-width: 760px;
-        font-size: clamp(42px, 7vw, 74px);
-        line-height: 0.94;
+        max-width: 630px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(48px, 7vw, 82px);
+        line-height: 0.92;
         letter-spacing: 0;
+        font-weight: 700;
       }
 
       .lede {
         margin: 24px 0 0;
-        max-width: 650px;
-        color: var(--muted);
-        font-size: 20px;
+        max-width: 575px;
+        color: #24302c;
+        font-size: 19px;
+        line-height: 1.55;
       }
 
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 30px;
+        gap: 14px;
+        margin-top: 32px;
       }
 
-      .note {
-        margin: 18px 0 0;
+      .proof-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin-top: 34px;
+        max-width: 650px;
+      }
+
+      .proof {
+        display: grid;
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 10px;
+        align-items: start;
+      }
+
+      .proof svg {
+        width: 28px;
+        height: 28px;
+        color: var(--green);
+      }
+
+      .proof strong {
+        display: block;
+        font-size: 13px;
+      }
+
+      .proof span {
+        display: block;
+        margin-top: 3px;
         color: var(--muted);
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 1.45;
       }
 
-      .audit {
-        background: var(--panel);
-        border: 1px solid var(--ink);
+      .snapshot {
+        background: rgba(255, 253, 247, 0.92);
+        border: 1px solid var(--line);
         border-radius: 8px;
-        box-shadow: 8px 8px 0 rgba(21, 25, 31, 0.1);
+        box-shadow: 0 28px 70px var(--shadow);
         overflow: hidden;
       }
 
-      .audit-head {
-        padding: 18px 20px;
-        border-bottom: 1px solid var(--ink);
+      .snapshot-head {
         display: flex;
         justify-content: space-between;
         gap: 18px;
+        align-items: start;
+        padding: 28px 28px 20px;
       }
 
-      .audit-title {
-        font-weight: 780;
+      .snapshot h2 {
+        margin: 0;
+        font-size: 23px;
+        letter-spacing: 0;
       }
 
-      .audit-subtitle {
+      .snapshot-meta {
+        margin-top: 4px;
         color: var(--muted);
         font-size: 13px;
-        margin-top: 3px;
       }
 
-      .stamp {
-        align-self: start;
-        border: 1px solid var(--accent);
-        color: var(--accent-dark);
-        background: var(--green-soft);
-        border-radius: 999px;
-        padding: 5px 10px;
-        font-size: 12px;
-        font-weight: 780;
-      }
-
-      .audit-body {
-        padding: 18px 20px 20px;
-      }
-
-      .status-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin-bottom: 18px;
-      }
-
-      .status {
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 0 10px;
         border: 1px solid var(--line);
-        border-radius: 7px;
-        padding: 12px;
-        min-height: 92px;
-        background: white;
+        border-radius: 999px;
+        background: #fff;
+        color: #303b37;
+        font-size: 12px;
+        white-space: nowrap;
       }
 
-      .status strong {
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        padding: 0 28px 20px;
+      }
+
+      .metric {
+        min-height: 110px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fffdf9;
+      }
+
+      .metric strong {
         display: block;
-        font-size: 13px;
+        color: #27302d;
+        font-size: 12px;
       }
 
-      .status span {
+      .metric span {
+        display: block;
+        margin-top: 12px;
+        font-size: 28px;
+        line-height: 1;
+        font-weight: 760;
+      }
+
+      .metric small {
         display: block;
         margin-top: 8px;
-        font-size: 22px;
-        font-weight: 820;
-      }
-
-      .status small {
-        display: block;
         color: var(--muted);
         font-size: 12px;
-        margin-top: 2px;
+        line-height: 1.35;
+      }
+
+      .metric .orange {
+        color: var(--amber);
       }
 
       .table {
+        margin: 0 28px 28px;
         border: 1px solid var(--line);
-        border-radius: 7px;
+        border-radius: 6px;
         overflow: hidden;
-        background: white;
+        background: #fff;
       }
 
       .row {
         display: grid;
-        grid-template-columns: 1.25fr 0.9fr 0.95fr;
-        gap: 0;
+        grid-template-columns: 1.1fr 0.72fr 0.88fr 1fr;
         border-bottom: 1px solid var(--line);
       }
 
@@ -250,7 +291,7 @@
       }
 
       .cell {
-        padding: 12px;
+        padding: 14px 15px;
         border-right: 1px solid var(--line);
         font-size: 13px;
       }
@@ -260,35 +301,46 @@
       }
 
       .head-cell {
+        color: #303b37;
+        background: #f4f1ea;
+        font-size: 12px;
+        font-weight: 780;
+      }
+
+      .status {
+        display: inline-grid;
+        grid-template-columns: 8px auto;
+        gap: 8px;
+        align-items: center;
+        font-weight: 740;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      .dot.warn {
+        background: var(--amber);
+      }
+
+      .cell small {
+        display: block;
+        margin-top: 3px;
         color: var(--muted);
         font-size: 12px;
-        font-weight: 730;
-        background: #f1f3f0;
       }
 
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        min-height: 24px;
-        padding: 0 8px;
-        border-radius: 999px;
-        font-size: 12px;
+      .view-report {
+        display: flex;
+        justify-content: center;
+        padding: 14px;
+        border-top: 1px solid var(--line);
+        color: var(--green);
         font-weight: 760;
-      }
-
-      .pill.red {
-        background: var(--red-soft);
-        color: var(--red);
-      }
-
-      .pill.amber {
-        background: var(--amber-soft);
-        color: var(--amber);
-      }
-
-      .pill.green {
-        background: var(--green-soft);
-        color: var(--accent-dark);
+        font-size: 13px;
       }
 
       main section {
@@ -296,24 +348,68 @@
         border-bottom: 1px solid var(--line);
       }
 
-      h2 {
+      .problem {
+        background: rgba(243, 239, 229, 0.72);
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 54px;
+        align-items: start;
+      }
+
+      .section-label {
+        margin: 0 0 12px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 840;
+        text-transform: uppercase;
+      }
+
+      h3 {
         margin: 0;
-        font-size: 32px;
-        line-height: 1.1;
+        max-width: 560px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(34px, 4vw, 48px);
+        line-height: 1;
         letter-spacing: 0;
       }
 
-      .section-copy {
-        margin: 14px 0 0;
-        color: var(--muted);
-        max-width: 620px;
+      .problem-items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
       }
 
-      .split {
+      .problem-item {
+        padding-top: 6px;
+      }
+
+      .problem-icon {
+        width: 32px;
+        height: 32px;
+        color: var(--green);
+      }
+
+      .problem-item p {
+        margin: 12px 0 0;
+        color: #27302d;
+        font-size: 15px;
+      }
+
+      .method-grid {
         display: grid;
-        grid-template-columns: 0.88fr 1.12fr;
-        gap: 42px;
+        grid-template-columns: 0.84fr 1.16fr;
+        gap: 46px;
         align-items: start;
+      }
+
+      .section-copy {
+        margin: 18px 0 0;
+        max-width: 620px;
+        color: var(--muted);
+        font-size: 17px;
       }
 
       .steps {
@@ -323,28 +419,27 @@
 
       .step {
         display: grid;
-        grid-template-columns: 34px minmax(0, 1fr);
+        grid-template-columns: 38px minmax(0, 1fr);
         gap: 14px;
-        align-items: start;
-        background: var(--panel);
+        padding: 17px;
         border: 1px solid var(--line);
-        border-radius: 8px;
-        padding: 16px;
+        border-radius: 7px;
+        background: var(--panel);
       }
 
       .step-num {
-        width: 34px;
-        height: 34px;
-        border-radius: 6px;
+        width: 38px;
+        height: 38px;
         display: grid;
         place-items: center;
-        background: var(--ink);
-        color: white;
+        border-radius: 5px;
+        background: var(--green);
+        color: #fff;
         font-weight: 820;
         font-size: 13px;
       }
 
-      .step h3 {
+      .step h4 {
         margin: 0 0 4px;
         font-size: 16px;
       }
@@ -354,23 +449,22 @@
         color: var(--muted);
       }
 
-      .pricing {
-        max-width: 560px;
-        background: var(--panel);
+      .pricing-card {
+        max-width: 610px;
+        padding: 28px;
         border: 1px solid var(--ink);
         border-radius: 8px;
-        padding: 24px;
+        background: var(--panel);
       }
 
       .price {
         display: flex;
         align-items: baseline;
         gap: 8px;
-        margin-bottom: 12px;
       }
 
       .price strong {
-        font-size: 42px;
+        font-size: 44px;
         line-height: 1;
       }
 
@@ -379,45 +473,48 @@
       }
 
       .included {
-        margin: 18px 0 0;
+        margin: 20px 0 0;
         padding: 0;
-        list-style: none;
         display: grid;
         gap: 10px;
+        list-style: none;
       }
 
       .included li {
         display: grid;
-        grid-template-columns: 20px minmax(0, 1fr);
-        gap: 9px;
+        grid-template-columns: 22px minmax(0, 1fr);
+        gap: 8px;
         color: var(--muted);
       }
 
       .included b {
-        color: var(--accent-dark);
+        color: var(--green);
       }
 
       footer {
-        padding: 28px 0;
+        padding: 30px 0;
         color: var(--muted);
         font-size: 14px;
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 980px) {
         .nav-links {
           display: none;
         }
 
-        .hero {
-          padding-top: 48px;
-        }
-
         .hero-grid,
-        .split {
+        .problem-grid,
+        .method-grid {
           grid-template-columns: 1fr;
         }
 
-        .status-grid {
+        .hero-grid {
+          gap: 36px;
+        }
+
+        .metric-grid,
+        .proof-strip,
+        .problem-items {
           grid-template-columns: 1fr;
         }
 
@@ -434,138 +531,215 @@
           border-bottom: 0;
         }
       }
+
+      @media (max-width: 560px) {
+        .wrap {
+          width: min(100% - 26px, 1180px);
+        }
+
+        nav {
+          min-height: 66px;
+        }
+
+        .hero {
+          padding-top: 44px;
+        }
+
+        .hero-actions {
+          display: grid;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .snapshot-head,
+        .metric-grid,
+        .table {
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        .snapshot-head,
+        .metric-grid {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .table {
+          border-left: 0;
+          border-right: 0;
+          border-radius: 0;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
       <nav class="wrap">
-        <div class="brand"><span class="mark">SC</span> ShortlistCheck</div>
+        <a class="brand" href="#top" aria-label="ShortlistCheck home">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M8 6.5h22.5M8 6.5v27h16.5M8 18h15M8 29.5h10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="m23.5 27 4.4 4.4L35 21.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>ShortlistCheck</span>
+        </a>
         <div class="nav-links">
-          <a href="#method">Method</a>
+          <a href="#method">Audit method</a>
           <a href="#pricing">Pricing</a>
-          <a class="button secondary" href="mailto:shortlistcheck@gmail.com">Request a snapshot</a>
+          <a class="button" href="mailto:shortlistcheck@gmail.com">Request a baseline snapshot</a>
         </div>
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">For founder-led B2B SaaS teams</p>
+          <p class="eyebrow">AI recommendation visibility audits</p>
           <h1>Are AI assistants shortlisting your competitors?</h1>
-          <p class="lede">ShortlistCheck audits the buyer-intent prompts that matter: recommendations, alternatives, comparisons, integrations, and problem-led searches.</p>
+          <p class="lede">ShortlistCheck audits how AI assistants evaluate your category. See when you show up, who they recommend instead, and the public-facing fix to ship next.</p>
           <div class="hero-actions">
-            <a class="button" href="mailto:shortlistcheck@gmail.com">Request a baseline snapshot</a>
-            <a class="button secondary" href="#method">View the audit method</a>
+            <a class="button" href="mailto:shortlistcheck@gmail.com">Request a baseline snapshot <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="#method">View audit method <span aria-hidden="true">→</span></a>
           </div>
-          <p class="note">No ranking promises. No fake reviews. Public evidence, competitor substitutions, and one practical fix to ship next.</p>
+          <div class="proof-strip" aria-label="ShortlistCheck coverage">
+            <div class="proof">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 25a11 11 0 1 1 7.8-3.2L27 27" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              <div><strong>Real buyer prompts</strong><span>High-intent questions your buyers actually ask.</span></div>
+            </div>
+            <div class="proof">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24V13m7 11V8m7 16V17m7 7V5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M4 27h25" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              <div><strong>Multi-AI coverage</strong><span>Manual snapshots across selected answer engines.</span></div>
+            </div>
+            <div class="proof">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 26 8v7c0 6.6-4.1 10.7-10 13-5.9-2.3-10-6.4-10-13V8l10-4Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="m11.5 16.5 3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><strong>Actionable fixes</strong><span>Specific public-facing changes to win shortlists.</span></div>
+            </div>
+          </div>
         </div>
 
-        <div class="audit" aria-label="ShortlistCheck audit preview">
-          <div class="audit-head">
+        <div class="snapshot" aria-label="Illustrative ShortlistCheck baseline snapshot">
+          <div class="snapshot-head">
             <div>
-              <div class="audit-title">Buyer-prompt visibility brief</div>
-              <div class="audit-subtitle">Example format for one SaaS category</div>
+              <h2>Baseline Snapshot</h2>
+              <div class="snapshot-meta">Illustrative format · category example</div>
             </div>
-            <span class="stamp">Public signals only</span>
+            <span class="tag">Public signals only</span>
           </div>
-          <div class="audit-body">
-            <div class="status-grid">
-              <div class="status">
-                <strong>Recommended</strong>
-                <span>Some</span>
-                <small>Shortlisted in selected prompts</small>
-              </div>
-              <div class="status">
-                <strong>Substituted</strong>
-                <span>Often</span>
-                <small>Competitors appear instead</small>
-              </div>
-              <div class="status">
-                <strong>Next fix</strong>
-                <span>1 brief</span>
-                <small>Page, source, or positioning gap</small>
-              </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>Visibility</strong>
+              <span>28%</span>
+              <small>Prompts where you were shortlisted</small>
             </div>
-
-            <div class="table">
-              <div class="row">
-                <div class="cell head-cell">Buyer prompt type</div>
-                <div class="cell head-cell">Your visibility</div>
-                <div class="cell head-cell">What the brief explains</div>
-              </div>
-              <div class="row">
-                <div class="cell">Best tools for a specific SaaS use case</div>
-                <div class="cell"><span class="pill amber">Mentioned</span></div>
-                <div class="cell">Why others make the shortlist first</div>
-              </div>
-              <div class="row">
-                <div class="cell">Alternatives to the category leader</div>
-                <div class="cell"><span class="pill red">Omitted</span></div>
-                <div class="cell">Which comparison assets are missing</div>
-              </div>
-              <div class="row">
-                <div class="cell">Problem-led buying research</div>
-                <div class="cell"><span class="pill green">Recommended</span></div>
-                <div class="cell">Which public signals are working</div>
-              </div>
+            <div class="metric">
+              <strong>Competitor substitution</strong>
+              <span>71%</span>
+              <small>Prompts with another vendor instead</small>
             </div>
+            <div class="metric">
+              <strong>Top competitor</strong>
+              <span>3×</span>
+              <small>Most frequent replacement</small>
+            </div>
+            <div class="metric">
+              <strong>Next fix priority</strong>
+              <span class="orange">High</span>
+              <small>Update comparison page</small>
+            </div>
+          </div>
+          <div class="table">
+            <div class="row">
+              <div class="cell head-cell">Buyer prompt</div>
+              <div class="cell head-cell">Visibility</div>
+              <div class="cell head-cell">Competitor shown instead</div>
+              <div class="cell head-cell">Next fix to ship</div>
+            </div>
+            <div class="row">
+              <div class="cell">Best tools for fast-growing teams?</div>
+              <div class="cell"><span class="status"><span class="dot warn"></span>Not shortlisted</span><small>0/5 assistants</small></div>
+              <div class="cell">Two category leaders<small>Shown by 4/5</small></div>
+              <div class="cell">Add comparison proof and ROI detail</div>
+            </div>
+            <div class="row">
+              <div class="cell">Which tools integrate with Slack?</div>
+              <div class="cell"><span class="status"><span class="dot"></span>Shortlisted</span><small>4/5 assistants</small></div>
+              <div class="cell">One competitor<small>Shown by 1/5</small></div>
+              <div class="cell">Surface integration page more clearly</div>
+            </div>
+            <div class="row">
+              <div class="cell">Best tools for lean teams?</div>
+              <div class="cell"><span class="status"><span class="dot warn"></span>Not shortlisted</span><small>1/5 assistants</small></div>
+              <div class="cell">Three alternatives<small>Shown by 3/5</small></div>
+              <div class="cell">Clarify pricing and implementation timeline</div>
+            </div>
+            <div class="view-report">Monthly report includes raw prompt notes →</div>
           </div>
         </div>
       </div>
     </section>
 
     <main>
-      <section id="method">
-        <div class="wrap split">
+      <section class="problem">
+        <div class="wrap problem-grid">
           <div>
-            <h2>A monthly readout built around buying behavior</h2>
+            <p class="section-label">The problem</p>
+            <h3>AI assistants are now your buyers’ first stop.</h3>
+          </div>
+          <div class="problem-items">
+            <div class="problem-item">
+              <svg class="problem-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28a12 12 0 1 0 0-24 12 12 0 0 0 0 24Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13.5 12a3 3 0 1 1 4.3 2.7c-1.2.6-1.8 1.3-1.8 2.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 22h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+              <p>Buyers ask AI for recommendations before they reach out to sales.</p>
+            </div>
+            <div class="problem-item">
+              <svg class="problem-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5 29 27H3L16 5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 13v6m0 4h.01" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+              <p>If you are not shortlisted, competitors get compared instead.</p>
+            </div>
+            <div class="problem-item">
+              <svg class="problem-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28a12 12 0 1 0 0-24 12 12 0 0 0 0 24Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10.5 16.5 3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p>You need public signals that AI can see, explain, and trust.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="method">
+        <div class="wrap method-grid">
+          <div>
+            <p class="section-label">Audit method</p>
+            <h3>A monthly readout built around buying behavior.</h3>
             <p class="section-copy">Generic mention trackers can make a brand look visible while competitors still win the recommendation. ShortlistCheck focuses on whether your product is shortlisted when a buyer is actually evaluating options.</p>
           </div>
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
-              <div>
-                <h3>Prompt map</h3>
-                <p>Twenty buyer-intent prompts tailored to your category, customer, use cases, integrations, and named competitors.</p>
-              </div>
+              <div><h4>Prompt map</h4><p>Twenty buyer-intent prompts tailored to your category, customer, use cases, integrations, and named competitors.</p></div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
-              <div>
-                <h3>Competitor substitution review</h3>
-                <p>A concise table showing where your company is recommended, mentioned, omitted, or replaced by another vendor.</p>
-              </div>
+              <div><h4>Competitor substitution review</h4><p>A concise table showing where your company is recommended, mentioned, omitted, or replaced by another vendor.</p></div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
-              <div>
-                <h3>Public signal analysis</h3>
-                <p>Owned pages, comparison content, third-party profiles, reviews, integrations, documentation, and source patterns.</p>
-              </div>
+              <div><h4>Public signal analysis</h4><p>Owned pages, comparison content, third-party profiles, reviews, integrations, documentation, and source patterns.</p></div>
             </div>
             <div class="step">
               <div class="step-num">4</div>
-              <div>
-                <h3>One fix brief</h3>
-                <p>A specific asset or positioning improvement to publish next, tied to the prompts where competitors are winning.</p>
-              </div>
+              <div><h4>One fix brief</h4><p>A specific asset or positioning improvement to publish next, tied to the prompts where competitors are winning.</p></div>
             </div>
           </div>
         </div>
       </section>
 
       <section id="pricing">
-        <div class="wrap split">
+        <div class="wrap method-grid">
           <div>
-            <h2>First-customer pricing</h2>
+            <p class="section-label">Pricing</p>
+            <h3>First-customer pricing for a focused monthly monitor.</h3>
             <p class="section-copy">Best fit for B2B SaaS teams with a defined category, named competitors, and enough deal value for better discovery to matter.</p>
           </div>
-          <div class="pricing">
-            <div class="price">
-              <strong>$250</strong>
-              <span>/ month</span>
-            </div>
+          <div class="pricing-card">
+            <div class="price"><strong>$250</strong><span>/ month</span></div>
             <p class="section-copy">Monthly monitor for one B2B SaaS brand.</p>
             <ul class="included">
               <li><b>+</b><span>20 buyer-intent prompts</span></li>
@@ -574,7 +748,7 @@
               <li><b>+</b><span>One prioritized public-facing fix</span></li>
             </ul>
             <div class="hero-actions">
-              <a class="button" href="mailto:shortlistcheck@gmail.com">Request a baseline snapshot</a>
+              <a class="button" href="mailto:shortlistcheck@gmail.com">Request a baseline snapshot <span aria-hidden="true">→</span></a>
             </div>
             <p class="note">Early customers receive the report async. No private customer data is required for the baseline audit.</p>
           </div>
