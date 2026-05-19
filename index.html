@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ShortlistCheck - AI Recommendation Audits for B2B SaaS</title>
-    <meta name="description" content="ShortlistCheck audits whether AI assistants shortlist your B2B SaaS product, which competitors appear instead, and what public-facing fix to ship next.">
+    <title>PainSignal Sprint - Find Where Your B2B Buyers Already Complain</title>
+    <meta name="description" content="A one-week founder-led distribution sprint for early B2B SaaS teams: pain signals, channel map, outreach drafts, and mini CRM.">
     <style>
       :root {
         color-scheme: light;
-        --ink: #08110f;
-        --muted: #53605c;
-        --line: #d8d4c8;
-        --paper: #faf7ee;
-        --paper-2: #f3efe5;
+        --ink: #0c1210;
+        --muted: #59615e;
+        --paper: #f7f4ea;
         --panel: #fffdf7;
-        --green: #003f20;
-        --green-2: #0c5a35;
-        --amber: #d86f00;
-        --amber-soft: #fff2dc;
-        --green-soft: #e7f1ea;
-        --shadow: rgba(8, 17, 15, 0.1);
+        --line: #d7d0c0;
+        --green: #123c2b;
+        --green-2: #1f6747;
+        --blue: #214d7a;
+        --rust: #a34b1d;
+        --soft-green: #e7efe7;
+        --soft-blue: #e8eef5;
+        --shadow: rgba(12, 18, 16, 0.11);
       }
 
       * {
@@ -32,8 +32,8 @@
 
       body {
         margin: 0;
+        background: var(--paper);
         color: var(--ink);
-        background: radial-gradient(circle at 50% -10%, #fffdf7 0, var(--paper) 44%, #f6f1e7 100%);
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         line-height: 1.5;
       }
@@ -43,41 +43,47 @@
       }
 
       .wrap {
-        width: min(1180px, calc(100% - 36px));
+        width: min(1160px, calc(100% - 36px));
         margin: 0 auto;
       }
 
       header {
-        border-bottom: 1px solid rgba(216, 212, 200, 0.75);
+        border-bottom: 1px solid var(--line);
+        background: rgba(247, 244, 234, 0.96);
       }
 
       nav {
-        min-height: 76px;
+        min-height: 72px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 22px;
+        gap: 20px;
       }
 
       .brand {
         display: flex;
         align-items: center;
         gap: 12px;
-        font-weight: 800;
-        font-size: 21px;
+        font-weight: 850;
+        font-size: 20px;
+        text-decoration: none;
       }
 
-      .brand-mark {
-        width: 36px;
-        height: 36px;
-        color: var(--green);
+      .mark {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fffdf7;
+        font-weight: 900;
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 32px;
-        color: #1b2421;
+        gap: 28px;
         font-size: 14px;
       }
 
@@ -89,131 +95,121 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
         min-height: 46px;
-        padding: 0 20px;
-        border-radius: 5px;
+        padding: 0 18px;
         border: 1px solid var(--green);
+        border-radius: 5px;
         background: var(--green);
         color: #fffdf7;
-        font-weight: 760;
-        font-size: 14px;
+        font-weight: 780;
         text-decoration: none;
         white-space: nowrap;
-        box-shadow: 0 10px 26px rgba(0, 63, 32, 0.18);
+        box-shadow: 0 12px 28px rgba(18, 60, 43, 0.16);
       }
 
       .button.secondary {
         background: transparent;
         color: var(--ink);
         box-shadow: none;
-        border-color: #1f2925;
+        border-color: #26332e;
       }
 
       .hero {
-        padding: 64px 0 34px;
+        padding: 70px 0 44px;
         border-bottom: 1px solid var(--line);
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
-        gap: 56px;
+        grid-template-columns: minmax(0, 0.9fr) minmax(500px, 1.1fr);
+        gap: 58px;
         align-items: center;
       }
 
       .eyebrow {
-        margin: 0 0 18px;
-        color: var(--green);
+        margin: 0 0 16px;
+        color: var(--rust);
         font-size: 12px;
-        font-weight: 840;
+        font-weight: 860;
         letter-spacing: 0;
         text-transform: uppercase;
       }
 
       h1 {
         margin: 0;
-        max-width: 630px;
+        max-width: 660px;
         font-family: Georgia, "Times New Roman", serif;
         font-size: clamp(48px, 7vw, 82px);
-        line-height: 0.92;
+        line-height: 0.93;
         letter-spacing: 0;
-        font-weight: 700;
       }
 
       .lede {
         margin: 24px 0 0;
-        max-width: 575px;
-        color: #24302c;
+        max-width: 610px;
+        color: #27322e;
         font-size: 19px;
         line-height: 1.55;
       }
 
-      .hero-actions {
+      .actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 32px;
-      }
-
-      .proof-strip {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-        margin-top: 34px;
-        max-width: 650px;
+        gap: 12px;
+        margin-top: 30px;
       }
 
       .proof {
         display: grid;
-        grid-template-columns: 30px minmax(0, 1fr);
-        gap: 10px;
-        align-items: start;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 34px;
       }
 
-      .proof svg {
-        width: 28px;
-        height: 28px;
-        color: var(--green);
+      .proof-item {
+        padding: 15px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: rgba(255, 253, 247, 0.72);
       }
 
-      .proof strong {
+      .proof-item strong {
         display: block;
         font-size: 13px;
       }
 
-      .proof span {
+      .proof-item span {
         display: block;
-        margin-top: 3px;
+        margin-top: 4px;
         color: var(--muted);
         font-size: 12px;
-        line-height: 1.45;
+        line-height: 1.42;
       }
 
-      .snapshot {
-        background: rgba(255, 253, 247, 0.92);
+      .board {
         border: 1px solid var(--line);
         border-radius: 8px;
+        background: var(--panel);
         box-shadow: 0 28px 70px var(--shadow);
         overflow: hidden;
       }
 
-      .snapshot-head {
+      .board-head {
         display: flex;
         justify-content: space-between;
         gap: 18px;
         align-items: start;
-        padding: 28px 28px 20px;
+        padding: 26px 26px 18px;
+        border-bottom: 1px solid var(--line);
       }
 
-      .snapshot h2 {
+      .board h2 {
         margin: 0;
         font-size: 23px;
-        letter-spacing: 0;
       }
 
-      .snapshot-meta {
-        margin-top: 4px;
+      .board-meta {
+        margin-top: 3px;
         color: var(--muted);
         font-size: 13px;
       }
@@ -231,139 +227,74 @@
         white-space: nowrap;
       }
 
-      .metric-grid {
+      .signal-list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
         gap: 12px;
-        padding: 0 28px 20px;
+        padding: 22px 26px 26px;
       }
 
-      .metric {
-        min-height: 110px;
-        padding: 16px;
+      .signal {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+        padding: 14px;
         border: 1px solid var(--line);
-        border-radius: 6px;
-        background: #fffdf9;
-      }
-
-      .metric strong {
-        display: block;
-        color: #27302d;
-        font-size: 12px;
-      }
-
-      .metric span {
-        display: block;
-        margin-top: 12px;
-        font-size: 28px;
-        line-height: 1;
-        font-weight: 760;
-      }
-
-      .metric small {
-        display: block;
-        margin-top: 8px;
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 1.35;
-      }
-
-      .metric .orange {
-        color: var(--amber);
-      }
-
-      .table {
-        margin: 0 28px 28px;
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        overflow: hidden;
+        border-radius: 7px;
         background: #fff;
       }
 
-      .row {
+      .num {
+        width: 34px;
+        height: 34px;
         display: grid;
-        grid-template-columns: 1.1fr 0.72fr 0.88fr 1fr;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .row:last-child {
-        border-bottom: 0;
-      }
-
-      .cell {
-        padding: 14px 15px;
-        border-right: 1px solid var(--line);
-        font-size: 13px;
-      }
-
-      .cell:last-child {
-        border-right: 0;
-      }
-
-      .head-cell {
-        color: #303b37;
-        background: #f4f1ea;
-        font-size: 12px;
-        font-weight: 780;
-      }
-
-      .status {
-        display: inline-grid;
-        grid-template-columns: 8px auto;
-        gap: 8px;
-        align-items: center;
-        font-weight: 740;
-      }
-
-      .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--green);
-      }
-
-      .dot.warn {
-        background: var(--amber);
-      }
-
-      .cell small {
-        display: block;
-        margin-top: 3px;
-        color: var(--muted);
-        font-size: 12px;
-      }
-
-      .view-report {
-        display: flex;
-        justify-content: center;
-        padding: 14px;
-        border-top: 1px solid var(--line);
+        place-items: center;
+        border-radius: 5px;
+        background: var(--soft-green);
         color: var(--green);
-        font-weight: 760;
+        font-weight: 860;
         font-size: 13px;
+      }
+
+      .signal strong {
+        display: block;
+        font-size: 14px;
+      }
+
+      .signal p {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .score {
+        min-width: 86px;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: var(--soft-blue);
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 820;
+        text-align: center;
       }
 
       main section {
-        padding: 58px 0;
+        padding: 60px 0;
         border-bottom: 1px solid var(--line);
       }
 
-      .problem {
-        background: rgba(243, 239, 229, 0.72);
-      }
-
-      .problem-grid {
+      .split {
         display: grid;
-        grid-template-columns: 0.92fr 1.08fr;
-        gap: 54px;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 48px;
         align-items: start;
       }
 
       .section-label {
         margin: 0 0 12px;
-        color: var(--green);
+        color: var(--rust);
         font-size: 12px;
-        font-weight: 840;
+        font-weight: 860;
         text-transform: uppercase;
       }
 
@@ -373,42 +304,12 @@
         font-family: Georgia, "Times New Roman", serif;
         font-size: clamp(34px, 4vw, 48px);
         line-height: 1;
-        letter-spacing: 0;
-      }
-
-      .problem-items {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-      }
-
-      .problem-item {
-        padding-top: 6px;
-      }
-
-      .problem-icon {
-        width: 32px;
-        height: 32px;
-        color: var(--green);
-      }
-
-      .problem-item p {
-        margin: 12px 0 0;
-        color: #27302d;
-        font-size: 15px;
-      }
-
-      .method-grid {
-        display: grid;
-        grid-template-columns: 0.84fr 1.16fr;
-        gap: 46px;
-        align-items: start;
       }
 
       .section-copy {
         margin: 18px 0 0;
-        max-width: 620px;
         color: var(--muted);
+        max-width: 620px;
         font-size: 17px;
       }
 
@@ -434,9 +335,9 @@
         place-items: center;
         border-radius: 5px;
         background: var(--green);
-        color: #fff;
-        font-weight: 820;
+        color: white;
         font-size: 13px;
+        font-weight: 860;
       }
 
       .step h4 {
@@ -449,8 +350,8 @@
         color: var(--muted);
       }
 
-      .pricing-card {
-        max-width: 610px;
+      .price-card {
+        max-width: 620px;
         padding: 28px;
         border: 1px solid var(--ink);
         border-radius: 8px;
@@ -460,11 +361,11 @@
       .price {
         display: flex;
         align-items: baseline;
-        gap: 8px;
+        gap: 10px;
       }
 
       .price strong {
-        font-size: 44px;
+        font-size: 46px;
         line-height: 1;
       }
 
@@ -483,12 +384,12 @@
       .included li {
         display: grid;
         grid-template-columns: 22px minmax(0, 1fr);
-        gap: 8px;
+        gap: 9px;
         color: var(--muted);
       }
 
       .included b {
-        color: var(--green);
+        color: var(--green-2);
       }
 
       footer {
@@ -503,49 +404,34 @@
         }
 
         .hero-grid,
-        .problem-grid,
-        .method-grid {
+        .split {
           grid-template-columns: 1fr;
         }
 
-        .hero-grid {
-          gap: 36px;
-        }
-
-        .metric-grid,
-        .proof-strip,
-        .problem-items {
+        .proof {
           grid-template-columns: 1fr;
         }
 
-        .row {
-          grid-template-columns: 1fr;
+        .signal {
+          grid-template-columns: 34px minmax(0, 1fr);
         }
 
-        .cell {
-          border-right: 0;
-          border-bottom: 1px solid var(--line);
-        }
-
-        .row .cell:last-child {
-          border-bottom: 0;
+        .score {
+          grid-column: 2;
+          justify-self: start;
         }
       }
 
       @media (max-width: 560px) {
         .wrap {
-          width: min(100% - 26px, 1180px);
-        }
-
-        nav {
-          min-height: 66px;
+          width: min(100% - 26px, 1160px);
         }
 
         .hero {
           padding-top: 44px;
         }
 
-        .hero-actions {
+        .actions {
           display: grid;
         }
 
@@ -553,23 +439,8 @@
           width: 100%;
         }
 
-        .snapshot-head,
-        .metric-grid,
-        .table {
-          margin-left: 0;
-          margin-right: 0;
-        }
-
-        .snapshot-head,
-        .metric-grid {
-          padding-left: 16px;
-          padding-right: 16px;
-        }
-
-        .table {
-          border-left: 0;
-          border-right: 0;
-          border-radius: 0;
+        .board-head {
+          display: grid;
         }
       }
     </style>
@@ -577,17 +448,11 @@
   <body>
     <header>
       <nav class="wrap">
-        <a class="brand" href="#top" aria-label="ShortlistCheck home">
-          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M8 6.5h22.5M8 6.5v27h16.5M8 18h15M8 29.5h10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            <path d="m23.5 27 4.4 4.4L35 21.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>ShortlistCheck</span>
-        </a>
+        <a class="brand" href="#top" aria-label="PainSignal home"><span class="mark">PS</span> PainSignal Sprint</a>
         <div class="nav-links">
-          <a href="#method">Audit method</a>
+          <a href="#method">Method</a>
           <a href="#pricing">Pricing</a>
-          <a class="button" href="mailto:shortlistcheck@gmail.com">Request a baseline snapshot</a>
+          <a class="button" href="mailto:shortlistcheck@gmail.com?subject=PainSignal%20Sprint">Get a sprint</a>
         </div>
       </nav>
     </header>
@@ -595,169 +460,111 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">AI recommendation visibility audits</p>
-          <h1>Are AI assistants shortlisting your competitors?</h1>
-          <p class="lede">ShortlistCheck audits how AI assistants evaluate your category. See when you show up, who they recommend instead, and the public-facing fix to ship next.</p>
-          <div class="hero-actions">
-            <a class="button" href="mailto:shortlistcheck@gmail.com">Request a baseline snapshot <span aria-hidden="true">→</span></a>
-            <a class="button secondary" href="#method">View audit method <span aria-hidden="true">→</span></a>
+          <p class="eyebrow">For B2B SaaS founders stuck before repeatable distribution</p>
+          <h1>Find where your buyers are already complaining.</h1>
+          <p class="lede">A one-week manual sprint that turns public pain signals into a focused founder-led sales motion: buyer complaints, channel map, outreach drafts, and a mini CRM.</p>
+          <div class="actions">
+            <a class="button" href="mailto:shortlistcheck@gmail.com?subject=PainSignal%20Sprint">Get a one-week sprint</a>
+            <a class="button secondary" href="#method">See what you get</a>
           </div>
-          <div class="proof-strip" aria-label="ShortlistCheck coverage">
-            <div class="proof">
-              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 25a11 11 0 1 1 7.8-3.2L27 27" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-              <div><strong>Real buyer prompts</strong><span>High-intent questions your buyers actually ask.</span></div>
-            </div>
-            <div class="proof">
-              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24V13m7 11V8m7 16V17m7 7V5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M4 27h25" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-              <div><strong>Multi-AI coverage</strong><span>Manual snapshots across selected answer engines.</span></div>
-            </div>
-            <div class="proof">
-              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 26 8v7c0 6.6-4.1 10.7-10 13-5.9-2.3-10-6.4-10-13V8l10-4Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="m11.5 16.5 3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div><strong>Actionable fixes</strong><span>Specific public-facing changes to win shortlists.</span></div>
-            </div>
+          <div class="proof">
+            <div class="proof-item"><strong>Not a lead list</strong><span>Every prospect starts with visible pain, not a guessed persona.</span></div>
+            <div class="proof-item"><strong>Not launch advice</strong><span>One ICP, one channel, one manual motion to test this week.</span></div>
+            <div class="proof-item"><strong>Dogfooded</strong><span>The same system is used to find PainSignal customers.</span></div>
           </div>
         </div>
 
-        <div class="snapshot" aria-label="Illustrative ShortlistCheck baseline snapshot">
-          <div class="snapshot-head">
+        <div class="board" aria-label="Illustrative PainSignal sprint board">
+          <div class="board-head">
             <div>
-              <h2>Baseline Snapshot</h2>
-              <div class="snapshot-meta">Illustrative format · category example</div>
+              <h2>Pain Signal Board</h2>
+              <div class="board-meta">Example output for one B2B SaaS founder</div>
             </div>
-            <span class="tag">Public signals only</span>
+            <span class="tag">Public complaints only</span>
           </div>
-          <div class="metric-grid">
-            <div class="metric">
-              <strong>Visibility</strong>
-              <span>28%</span>
-              <small>Prompts where you were shortlisted</small>
+          <div class="signal-list">
+            <div class="signal">
+              <div class="num">01</div>
+              <div><strong>Community thread</strong><p>ICP says current workflow breaks when customer onboarding volume spikes.</p></div>
+              <div class="score">Urgency 5/5</div>
             </div>
-            <div class="metric">
-              <strong>Competitor substitution</strong>
-              <span>71%</span>
-              <small>Prompts with another vendor instead</small>
+            <div class="signal">
+              <div class="num">02</div>
+              <div><strong>Trigger event</strong><p>New team lead hired after Series A; tooling consolidation likely.</p></div>
+              <div class="score">Reachable</div>
             </div>
-            <div class="metric">
-              <strong>Top competitor</strong>
-              <span>3×</span>
-              <small>Most frequent replacement</small>
+            <div class="signal">
+              <div class="num">03</div>
+              <div><strong>Message angle</strong><p>Lead with the operational failure they described, not your feature set.</p></div>
+              <div class="score">Draft ready</div>
             </div>
-            <div class="metric">
-              <strong>Next fix priority</strong>
-              <span class="orange">High</span>
-              <small>Update comparison page</small>
+            <div class="signal">
+              <div class="num">04</div>
+              <div><strong>Channel decision</strong><p>Skip broad posting; reply in two niche communities and run 10 targeted founder emails.</p></div>
+              <div class="score">This week</div>
             </div>
-          </div>
-          <div class="table">
-            <div class="row">
-              <div class="cell head-cell">Buyer prompt</div>
-              <div class="cell head-cell">Visibility</div>
-              <div class="cell head-cell">Competitor shown instead</div>
-              <div class="cell head-cell">Next fix to ship</div>
-            </div>
-            <div class="row">
-              <div class="cell">Best tools for fast-growing teams?</div>
-              <div class="cell"><span class="status"><span class="dot warn"></span>Not shortlisted</span><small>0/5 assistants</small></div>
-              <div class="cell">Two category leaders<small>Shown by 4/5</small></div>
-              <div class="cell">Add comparison proof and ROI detail</div>
-            </div>
-            <div class="row">
-              <div class="cell">Which tools integrate with Slack?</div>
-              <div class="cell"><span class="status"><span class="dot"></span>Shortlisted</span><small>4/5 assistants</small></div>
-              <div class="cell">One competitor<small>Shown by 1/5</small></div>
-              <div class="cell">Surface integration page more clearly</div>
-            </div>
-            <div class="row">
-              <div class="cell">Best tools for lean teams?</div>
-              <div class="cell"><span class="status"><span class="dot warn"></span>Not shortlisted</span><small>1/5 assistants</small></div>
-              <div class="cell">Three alternatives<small>Shown by 3/5</small></div>
-              <div class="cell">Clarify pricing and implementation timeline</div>
-            </div>
-            <div class="view-report">Monthly report includes raw prompt notes →</div>
           </div>
         </div>
       </div>
     </section>
 
     <main>
-      <section class="problem">
-        <div class="wrap problem-grid">
-          <div>
-            <p class="section-label">The problem</p>
-            <h3>AI assistants are now your buyers’ first stop.</h3>
-          </div>
-          <div class="problem-items">
-            <div class="problem-item">
-              <svg class="problem-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28a12 12 0 1 0 0-24 12 12 0 0 0 0 24Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13.5 12a3 3 0 1 1 4.3 2.7c-1.2.6-1.8 1.3-1.8 2.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 22h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-              <p>Buyers ask AI for recommendations before they reach out to sales.</p>
-            </div>
-            <div class="problem-item">
-              <svg class="problem-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5 29 27H3L16 5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 13v6m0 4h.01" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
-              <p>If you are not shortlisted, competitors get compared instead.</p>
-            </div>
-            <div class="problem-item">
-              <svg class="problem-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28a12 12 0 1 0 0-24 12 12 0 0 0 0 24Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10.5 16.5 3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p>You need public signals that AI can see, explain, and trust.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="method">
-        <div class="wrap method-grid">
+        <div class="wrap split">
           <div>
-            <p class="section-label">Audit method</p>
-            <h3>A monthly readout built around buying behavior.</h3>
-            <p class="section-copy">Generic mention trackers can make a brand look visible while competitors still win the recommendation. ShortlistCheck focuses on whether your product is shortlisted when a buyer is actually evaluating options.</p>
+            <p class="section-label">Method</p>
+            <h3>Distribution starts where pain is already visible.</h3>
+            <p class="section-copy">Most early founders do too much generic promotion. PainSignal narrows the motion to people already describing the problem, then turns that language into useful replies, emails, and offer copy.</p>
           </div>
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
-              <div><h4>Prompt map</h4><p>Twenty buyer-intent prompts tailored to your category, customer, use cases, integrations, and named competitors.</p></div>
+              <div><h4>Tighten the ICP</h4><p>Clarify who actually has the painful version of the problem and who is too broad to chase.</p></div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
-              <div><h4>Competitor substitution review</h4><p>A concise table showing where your company is recommended, mentioned, omitted, or replaced by another vendor.</p></div>
+              <div><h4>Find active pain</h4><p>Search communities, comments, directories, and trigger events for current complaints and buying signals.</p></div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
-              <div><h4>Public signal analysis</h4><p>Owned pages, comparison content, third-party profiles, reviews, integrations, documentation, and source patterns.</p></div>
+              <div><h4>Map the channel</h4><p>Decide where to enter: community reply, founder email, partner intro, marketplace, or content asset.</p></div>
             </div>
             <div class="step">
               <div class="step-num">4</div>
-              <div><h4>One fix brief</h4><p>A specific asset or positioning improvement to publish next, tied to the prompts where competitors are winning.</p></div>
+              <div><h4>Draft the motion</h4><p>Write ten specific replies or messages, plus a concise problem-first offer rewrite.</p></div>
             </div>
           </div>
         </div>
       </section>
 
       <section id="pricing">
-        <div class="wrap method-grid">
+        <div class="wrap split">
           <div>
             <p class="section-label">Pricing</p>
-            <h3>First-customer pricing for a focused monthly monitor.</h3>
-            <p class="section-copy">Best fit for B2B SaaS teams with a defined category, named competitors, and enough deal value for better discovery to matter.</p>
+            <h3>Built for first conversations, not dashboards.</h3>
+            <p class="section-copy">Best fit for founders with a live B2B product who need qualified conversations before they need another growth tool.</p>
           </div>
-          <div class="pricing-card">
-            <div class="price"><strong>$250</strong><span>/ month</span></div>
-            <p class="section-copy">Monthly monitor for one B2B SaaS brand.</p>
+          <div class="price-card">
+            <div class="price"><strong>$300</strong><span>founding sprint</span></div>
+            <p class="section-copy">One week. One ICP. One manual sales motion.</p>
             <ul class="included">
-              <li><b>+</b><span>20 buyer-intent prompts</span></li>
-              <li><b>+</b><span>Up to five named competitors</span></li>
-              <li><b>+</b><span>Monthly visibility and substitution brief</span></li>
-              <li><b>+</b><span>One prioritized public-facing fix</span></li>
+              <li><b>+</b><span>25 public pain signals</span></li>
+              <li><b>+</b><span>Channel map and ICP memo</span></li>
+              <li><b>+</b><span>10 tailored replies or emails</span></li>
+              <li><b>+</b><span>Mini CRM with next actions</span></li>
+              <li><b>+</b><span>Offer/landing-page rewrite focused on the painful outcome</span></li>
             </ul>
-            <div class="hero-actions">
-              <a class="button" href="mailto:shortlistcheck@gmail.com">Request a baseline snapshot <span aria-hidden="true">→</span></a>
+            <div class="actions">
+              <a class="button" href="mailto:shortlistcheck@gmail.com?subject=PainSignal%20Sprint">Get a one-week sprint</a>
             </div>
-            <p class="note">Early customers receive the report async. No private customer data is required for the baseline audit.</p>
+            <p class="section-copy">$500/month follow-on for a weekly pain-signal pipeline and message drafts.</p>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="wrap">ShortlistCheck audits public-facing AI recommendation visibility for B2B SaaS teams.</div>
+      <div class="wrap">PainSignal Sprint is a manual founder-led distribution service for early B2B SaaS teams.</div>
     </footer>
   </body>
 </html>
